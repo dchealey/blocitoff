@@ -1,8 +1,11 @@
-<h1 class='list-title'><%= "#{@user.name}'s todo list."%></h1>
-<div class='row'>
-  <div class='col-md-4 pull-right'>
-    <h3>Blocitoff</h3>
-    <ul>
-        <li>Blocitoff will delete to-do items that have not been completed after seven days</li>
-    </ul>
+<div class="container">
+  <h2>"#{@user.name}'s To Do List"</h2>
+    <div class="table-responsive">
+      <table class="table table-hover ">
+        <%= render @user.items %>
+      </table>
+    </div>
+  <div class='new-item'>
+      <%= render 'items/form', item: Item.new, user: @user %>
   </div>
+</div>
